@@ -42,7 +42,7 @@ jobs:
       - name: Commit and push to mihomo branch
         run: |
           git fetch origin mihomo
-          git checkout mihomo
+          git checkout -B mihomo origin/mihomo
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add domain/microsoft.yaml domain/microsoft.mrs
