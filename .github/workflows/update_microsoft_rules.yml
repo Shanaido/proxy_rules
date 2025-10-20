@@ -1,0 +1,50 @@
+name: Update Microsoft Rules
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: mihomo
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install ruamel.yaml requests tldextract
+          
+      - name: Run filter rules script
+        run: python resources/filter_microsoft_rules.py
+
+      - name: Move files to domain directory
+        run: |
+          mkdir -p domain
+          mv microsoft.yaml domain/microsoft.yaml
+
+      - name: Download mihomo
+        run: |
+          wget https://github.com/MetaCubeX/mihomo/releases/download/v1.19.15/mihomo-linux-amd64-compatible-v1.19.15.gz -O mihomo.gz
+          gunzip mihomo.gz
+          chmod +x mihomo
+
+      - name: Convert microsoft.yaml to .mrs
+        run: |
+          ./mihomo convert-ruleset domain yaml microsoft.yaml microsoft.mrs
+
+      - name: Commit and push to mihomo branch
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add microsoft.yaml microsoft.mrs
+          git commit -m "Update microsoft rules" || echo "No changes"
+          git push origin mihomo
