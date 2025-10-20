@@ -37,7 +37,7 @@ jobs:
 
       - name: Convert microsoft.yaml to .mrs
         run: |
-          ./mihomo convert-ruleset domain yaml microsoft.yaml microsoft.mrs
+          ./mihomo convert-ruleset domain yaml domain/microsoft.yaml domain/microsoft.mrs
 
       - name: Commit and push to mihomo branch
         run: |
@@ -45,6 +45,6 @@ jobs:
           git checkout mihomo
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add microsoft.yaml microsoft.mrs
+          git add domain/microsoft.yaml domain/microsoft.mrs
           git commit -m "Update microsoft rules" || echo "No changes"
           git push origin mihomo
