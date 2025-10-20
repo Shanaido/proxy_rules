@@ -11,8 +11,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: mihomo
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -43,6 +41,8 @@ jobs:
 
       - name: Commit and push to mihomo branch
         run: |
+          git fetch origin mihomo
+          git checkout mihomo
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add microsoft.yaml microsoft.mrs
