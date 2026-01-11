@@ -13,7 +13,13 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Fetch and checkout mihomo branch
+        run: |
+          git fetch origin mihomo
+          git checkout -B mihomo origin/mihomo
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -23,9 +29,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install ruamel.yaml requests tldextract
-          
+
       - name: Run filter rules script
-        run: python resources/filter_microsoft_rules.py
+        run: |
+          python resources/filter_microsoft_rules.py
 
       - name: Move files to domain directory
         run: |
@@ -48,6 +55,4 @@ jobs:
           git config user.email "github-actions@github.com"
           git add domain/microsoft.yaml domain/microsoft.mrs
           git commit -m "Update microsoft rules" || echo "No changes"
-          git fetch origin mihomo
-          git merge --ff-only origin/mihomo || git reset --hard origin/mihomo
-          git push origin HEAD:mihomo
+          git push origin mihomo
