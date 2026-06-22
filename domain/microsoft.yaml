@@ -70,6 +70,7 @@ payload:
     - +.azure-dns.info
     - +.azure-dns.net
     - +.azure-dns.org
+    - +.azure-mobile.cn
     - +.azure-mobile.net
     - +.azure-sphere.com
     - +.azure-test.net
@@ -485,11 +486,15 @@ payload:
     - +.sharepointonline.com
     - +.signalr.net
     - +.skype
+    - +.skype-edf.akadns.net
     - +.skype.com
     - +.skype.net
     - +.skypeassets.com
     - +.skypeassets.net
-    - +.skypedata.akadns.net
+    - +.sovcloud-mx.cn
+    - +.sovcloud-static.cn
+    - +.sovcloud-usercontent.cn
+    - +.sovcloud.cn
     - +.spo-msedge.net
     - +.spoprod-a.akamaihd.net
     - +.sprinklesapp.com
@@ -513,7 +518,6 @@ payload:
     - +.translatetheweb.com
     - +.trustcenter.cn
     - +.tryfunctions.com
-    - +.unity3dcloud.cn
     - +.unlocklimitlesslearning.com
     - +.userpxt.io
     - +.uwpcommunitytoolkit.com
