@@ -172,6 +172,7 @@ payload:
     - +.efproject.net
     - +.elderscrolls.com
     - +.engkoo.com
+    - +.exp-tas.com
     - +.fasttrackreadysupport.com
     - +.femalefounderscomp.com
     - +.flightsimulator.com
@@ -536,7 +537,10 @@ payload:
     - +.vsassets.io
     - +.vscode-cdn.net
     - +.vscode-unpkg.net
+    - +.vscode-webview.net
     - +.vscode.dev
+    - +.vscodeedu.app
+    - +.vscodeedu.com
     - +.wbd.ms
     - +.what-fan.net
     - +.windows
@@ -579,7 +583,6 @@ payload:
     - +.xboxstudios.com
     - +.xbx.lv
     - +.yammer.com
-    - default.exp-tas.com
     - img-prod-cms-rt-microsoft-com.akamaized.net
     - img-s-msn-com.akamaized.net
     - mwf-service.akamaized.net
