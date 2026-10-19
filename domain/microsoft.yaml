@@ -18,7 +18,6 @@ payload:
     - +.applicationinsights.net
     - +.appserviceenvironment.cn
     - +.aria.ms
-    - +.asobostudio.com
     - +.asp.net
     - +.aspnetcdn.com
     - +.azchcdna.com
@@ -180,7 +179,6 @@ payload:
     - +.exp-tas.com
     - +.fasttrackreadysupport.com
     - +.femalefounderscomp.com
-    - +.flightsimulator.com
     - +.flipwithsurface.com
     - +.fluidpreview.com
     - +.footprintdns.com
@@ -492,11 +490,11 @@ payload:
     - +.sharepointonline.com
     - +.signalr.net
     - +.skype
+    - +.skype-edf.akadns.net
     - +.skype.com
     - +.skype.net
     - +.skypeassets.com
     - +.skypeassets.net
-    - +.skypedata.akadns.net
     - +.sovcloud-mx.cn
     - +.sovcloud-static.cn
     - +.sovcloud-usercontent.cn
